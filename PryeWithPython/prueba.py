@@ -90,7 +90,18 @@ def tStudent(df, alfa, tipo):
     plt.xlabel('valores')
     plt.show()
 
+def fFischer():
+    v1 = 30
+    v2 = 25
+    
+    f = stats.f(v1,v2)
+    x = np.linspace(f.ppf(0.000001),f.ppf(0.999999), 10000)
+    fp = f.pdf(x)
+    plt.plot(x,fp)
+    plt.show()
+
 def main():
+    #fFischer()
     print("digite 1 para chicuadrado")
     print("digite 2 para normal estandar")
     print("digite 3 t Student")
@@ -135,4 +146,5 @@ def main():
         else:
             lados = 1
         tStudent(df, alfa, lados)
+        
 main()
