@@ -92,7 +92,7 @@ def tStudent():
     #df = 15 # parametro de forma.
     t = stats.t(df)
     
-    x = np.linspace(t.ppf(0.000001),t.ppf(0.999ñ999), 10000)
+    x = np.linspace(t.ppf(0.000001),t.ppf(0.999999), 10000)
     fp = t.pdf(x) # Función de Probabilidad
     plt.plot(x, fp)
     critical = t.ppf(alfa)
