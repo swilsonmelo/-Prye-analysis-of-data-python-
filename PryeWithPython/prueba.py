@@ -12,7 +12,7 @@ def chiSquare(df,beta):
     
     criticalFin = stats.chi2.ppf(0.99, df)
     fig,ax = plt.subplots(1,1)
-    fig = null
+    fig = None
 
     #print(criticalFin)
     ini = 0
@@ -128,7 +128,6 @@ def main():
         alfa = float(stdin.readline().strip())
         print("I para el area a la izquierda, D para el area a la derecha y B para ambas areas ")
         tipo = stdin.readline().strip()
-        print(tipo)
         if(tipo == "I"):
             lados = -1
         elif(tipo == "B"):
