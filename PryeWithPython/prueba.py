@@ -12,6 +12,7 @@ def chiSquare(df,beta):
     
     criticalFin = stats.chi2.ppf(0.99, df)
     fig,ax = plt.subplots(1,1)
+    fig = null
 
     #print(criticalFin)
     ini = 0
@@ -90,7 +91,12 @@ def tStudent(df, alfa, tipo):
     plt.xlabel('valores')
     plt.show()
 
-def fFischer():
+def fFischer(v1,v2,alfa):
+    """
+    v1 = grados de libertad 1
+    v2 = grados de libertad 2
+    alfa = area debajo de la curva a la derecha
+    """
     v1 = 30
     v2 = 25
     
