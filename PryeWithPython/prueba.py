@@ -3,6 +3,7 @@ import numpy as np
 from scipy import stats
 import matplotlib.pyplot as plt
 
+
 def chiSquare(df,beta):
     """
     hace la función de chi cuadrado y su grafica
