@@ -14,8 +14,10 @@ def IntervaloMiuSigmaConocido(n, miu, variacion, alfa, sigma):
     estadistico = z.ppf(alfa/2)
     limiIzq = miu
     limiDer = miu
-    
-
+    limiIzq += estadistico*(sigma/((n)**(0.5)))
+    limiDer -= estadistico*(sigma/((n)**(0.5)))
+    print(estadistico)
+    return (round(limiIzq,5), round(limiDer,5))
 
 def IntervaloMiuSigmaDesconocido(n, miu, variacion, alfa):
     df = n-1
@@ -26,7 +28,7 @@ def IntervaloMiuSigmaDesconocido(n, miu, variacion, alfa):
     limiIzq += estadistico*(variacion/((n)**0.5)) 
     limiDer -= estadistico*(variacion/((n)**0.5))
     print(estadistico)
-    return (round(limiIzq,5),round(limiDer,5))
+    return (round(limiIzq,5), round(limiDer,5))
 
 
 raiz = Tk()
@@ -99,11 +101,12 @@ def capturarDatos():
     alfa = float(entryAlfa.get())
     sigma = entrySigma.get()
     if(sigma):
-        print(sigma)
+        sigma = float(sigma)
+        limites = IntervaloMiuSigmaConocido(n,miu,variacion,alfa,sigma)
     else:
         limites = IntervaloMiuSigmaDesconocido(n,miu,variacion, alfa)
     #actualización valores
-    labelLimiIzVal = Label(miFrame,text = str(limites[0]))
+    labelLimiIzVal = Labecd l(miFrame,text = str(limites[0]))
     labelLimiIzVal.grid(row = rowGrid-2, column = 1, padx = 10, pady = 10)
     labelDerVal = Label(miFrame,text = str(limites[1]))
     labelDerVal.grid(row = rowGrid-1, column = 1, padx = 10, pady = 10)
