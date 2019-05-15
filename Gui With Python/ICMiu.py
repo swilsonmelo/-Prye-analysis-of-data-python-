@@ -106,7 +106,7 @@ def capturarDatos():
     else:
         limites = IntervaloMiuSigmaDesconocido(n,miu,variacion, alfa)
     #actualización valores
-    labelLimiIzVal = Labecd l(miFrame,text = str(limites[0]))
+    labelLimiIzVal = Label(miFrame,text = str(limites[0]))
     labelLimiIzVal.grid(row = rowGrid-2, column = 1, padx = 10, pady = 10)
     labelDerVal = Label(miFrame,text = str(limites[1]))
     labelDerVal.grid(row = rowGrid-1, column = 1, padx = 10, pady = 10)
